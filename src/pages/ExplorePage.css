@@ -1,0 +1,78 @@
+/* Explore Page Styles */
+.explore-page {
+  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.explore-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.explore-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.explore-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.explore-content {
+  min-height: 300px;
+}
+
+.explore-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.explore-empty h3 {
+  font-size: 20px;
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+.explore-empty p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .explore-page {
+    padding: 16px 0;
+  }
+
+  .explore-header {
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+
+  .explore-title {
+    font-size: 24px;
+  }
+
+  .explore-subtitle {
+    font-size: 14px;
+  }
+
+  .explore-empty {
+    padding: 40px 16px;
+  }
+
+  .explore-empty h3 {
+    font-size: 18px;
+  }
+
+  .explore-empty p {
+    font-size: 14px;
+  }
+}

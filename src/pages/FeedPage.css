@@ -1,0 +1,45 @@
+/* Feed Page Styles */
+.feed-page {
+  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feed-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.feed-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.feed-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .feed-page {
+    padding: 16px 0;
+  }
+
+  .feed-header {
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+
+  .feed-title {
+    font-size: 24px;
+  }
+
+  .feed-subtitle {
+    font-size: 14px;
+  }
+}

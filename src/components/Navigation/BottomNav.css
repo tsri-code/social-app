@@ -1,0 +1,143 @@
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #e5e5e5;
+  z-index: 100;
+  padding: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #666;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  min-width: 60px;
+}
+
+.bottom-nav__item:hover {
+  color: #333;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav__item--active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.bottom-nav__item--active .nav-icon {
+  transform: scale(1.1);
+}
+
+.nav-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.bottom-nav__label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bottom-nav__avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.bottom-nav__item--active .bottom-nav__avatar {
+  border-color: #007bff;
+}
+
+.bottom-nav__add-button {
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.bottom-nav__add-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+  color: white;
+}
+
+.bottom-nav__add-button .nav-icon {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.bottom-nav__add-button .bottom-nav__label {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .bottom-nav__container {
+    padding: 6px 0;
+  }
+
+  .bottom-nav__item {
+    padding: 6px 8px;
+    min-width: 50px;
+  }
+
+  .bottom-nav__label {
+    font-size: 9px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+
+  .bottom-nav__add-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bottom-nav__add-button .nav-icon {
+    font-size: 20px;
+  }
+}
+
+/* Add padding to body to account for fixed bottom nav */
+body {
+  padding-bottom: 80px;
+}
