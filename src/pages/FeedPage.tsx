@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useAppContext } from "../context/AppContext";
 import PostGrid from "../components/Post/PostGrid";
+import { GridSkeleton } from "../components/UI/LoadingSkeleton";
 import { useApi } from "../hooks/useApi";
 import "./FeedPage.css";
 
@@ -29,7 +30,17 @@ const FeedPage: React.FC = () => {
   }, [dispatch, getAppInfo, state.posts.length]);
 
   if (state.loading) {
-    return <div className="loading">Loading feed...</div>;
+    return (
+      <div className="feed-page">
+        <div className="feed-header">
+          <h1 className="feed-title">Latest Posts</h1>
+          <p className="feed-subtitle">
+            Discover amazing content from our community
+          </p>
+        </div>
+        <GridSkeleton count={6} />
+      </div>
+    );
   }
 
   return (

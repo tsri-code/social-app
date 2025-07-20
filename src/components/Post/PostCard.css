@@ -1,1 +1,218 @@
-/* PostCard styles will use existing card styles */
+/* Modern Post Card Styles */
+.card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+.card__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.card__image:hover {
+  transform: scale(1.02);
+}
+
+.card__delete-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: var(--transition-normal);
+  backdrop-filter: blur(10px);
+}
+
+.card:hover .card__delete-button {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card__delete-button:hover {
+  background: rgba(220, 53, 69, 0.8);
+  transform: scale(1.1);
+}
+
+.card__delete-icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.card__description {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.card__title {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+  line-height: 1.4;
+}
+
+.card__like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card__like-button:hover {
+  background: var(--color-background-secondary);
+  transform: scale(1.1);
+}
+
+.card__like-button_active {
+  animation: heartBeat 0.6s ease-in-out;
+}
+
+.card__like-icon {
+  width: 20px;
+  height: 20px;
+  transition: var(--transition-fast);
+  filter: var(--icon-filter, none);
+}
+
+.card__like-button:hover .card__like-icon {
+  transform: scale(1.2);
+}
+
+.card__like-button_active .card__like-icon {
+  filter: hue-rotate(0deg) saturate(2) brightness(1.2);
+}
+
+/* Heart beat animation */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loading state */
+.card--loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.card--loading .card__image {
+  filter: blur(1px);
+}
+
+/* Error state */
+.card--error {
+  border-color: var(--color-error);
+  background: rgba(220, 53, 69, 0.05);
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-md);
+  }
+
+  .card__image {
+    height: 300px;
+  }
+
+  .card__description {
+    padding: 12px;
+  }
+
+  .card__title {
+    font-size: 14px;
+    max-width: 150px;
+  }
+
+  .card__delete-button {
+    width: 32px;
+    height: 32px;
+    opacity: 1; /* Always visible on mobile */
+  }
+
+  .card__delete-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .card__delete-button {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .card__like-icon {
+  --icon-filter: brightness(0) invert(1);
+}
+
+/* Smooth page transitions */
+.card {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

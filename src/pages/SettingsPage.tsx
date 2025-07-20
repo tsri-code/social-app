@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useAppContext } from "../context/AppContext";
+import { useTheme } from "../context/ThemeContext";
 import "./SettingsPage.css";
 
 const SettingsPage: React.FC = () => {
   const { state } = useAppContext();
-  const [darkMode, setDarkMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const [notifications, setNotifications] = useState(true);
   const [privacy, setPrivacy] = useState("public");
 
@@ -44,8 +45,8 @@ const SettingsPage: React.FC = () => {
             <label className="settings-toggle">
               <input
                 type="checkbox"
-                checked={darkMode}
-                onChange={(e) => setDarkMode(e.target.checked)}
+                checked={theme === "dark"}
+                onChange={toggleTheme}
               />
               <span className="settings-slider"></span>
             </label>
