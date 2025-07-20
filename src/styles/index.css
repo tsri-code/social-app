@@ -1,0 +1,25 @@
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts.css");
+@import url("./blocks/content.css");
+@import url("./blocks/page.css");
+@import url("./blocks/header.css");
+@import url("./blocks/profile.css");
+@import url("./blocks/gallery.css");
+@import url("./blocks/card.css");
+@import url("./blocks/modal.css");
+@import url("./blocks/footer.css");
+
+/* React-specific styles */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
